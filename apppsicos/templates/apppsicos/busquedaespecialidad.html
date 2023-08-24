@@ -1,0 +1,19 @@
+  {% extends "apppsicos/padre.html" %}
+
+  {% load static %}
+  
+ {% block titulo %}ESTA ES LA BUSQUEDA DE ESPECIALIDAD {% endblock %}
+
+{% block contenido %}
+<form action="{% url 'buscar' %}" method="GET">
+     <input type="text" name="especialidad" id="especialidad" placeholder="INSEERTE ESPECIALIDAD">
+
+     <input type="submit" value="buscar especialidad">
+
+     
+</form>
+
+<h2>{{ mensaje }}</h2>
+  
+    
+{% endblock %}

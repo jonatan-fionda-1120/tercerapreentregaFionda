@@ -1,0 +1,30 @@
+{% extends "apppsicos/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}ESTA ES LA PAGINA DE ESPECIALIDADES {% endblock %}
+
+{% block contenido %} 
+<h1>ESPECIALIDADES</h1>
+
+<form action="{% url 'especialidad' %}" method="POST"> {% csrf_token %}
+
+    <table>    
+
+        {{ formulario.as_table }}
+     
+         </table>
+    
+    
+    <input type="submit" value="AGREGAR">
+</form>
+<h3> {{ mensaje }} </h3>
+
+
+    <ul>
+        {% for especialidad in especialidades %}
+            <li> {{ especialidad.tipo }} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

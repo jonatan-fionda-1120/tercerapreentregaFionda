@@ -1,0 +1,21 @@
+  {% extends "apppsicos/padre.html" %}
+
+  {% load static %}
+  
+ {% block titulo %}ESTA ES LA PAGINA DE RESULTADOS DE BUSQUEDA DE ESPECIALIDAD {% endblock %}
+
+{% block contenido %} 
+  <h1>RESULTADOS DE BUSQUEDA</h1>
+  {% for especialidad in especialidades_filtradas %}
+  <p>{{ especialidad.tipo }}</p>
+  {% empty %}
+
+  <p>NO SE ENCONTRARON RESULTADOS!</p>
+
+    
+  {% endfor %}
+
+ 
+ 
+  
+  {% endblock %}

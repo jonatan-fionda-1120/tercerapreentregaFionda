@@ -1,0 +1,22 @@
+{% extends "apppsicos/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}FORMULARIO DE CARGA DE CONTACTO {% endblock %}
+
+{% block contenido %} 
+ <h2>FORMULARIO</h2>
+<form action="{% url 'contacto' %}" method="POST"> {% csrf_token %}
+
+    <table>    
+
+        {{ formulario.as_table }}
+     
+         </table>
+    
+
+    <input type="submit" value="ENVIAR MENSAJE">
+
+</form>
+<h3> {{ mensaje }} </h3>
+{% endblock %}
